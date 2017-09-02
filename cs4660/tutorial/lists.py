@@ -2,7 +2,7 @@
 
 def get_first_item(li):
     """Return the first item from the list"""
-     return li[0]
+    pass
 
 def get_last_item(li):
     """Return the last item from the list"""
