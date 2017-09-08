@@ -12,6 +12,8 @@ class SimpleFile(object):
             for line in f:
                 self.numbers.append(float(i) for i in line.split())
 
+
+
     def get_mean(self, line_number):
         """
         get_mean retrieves the mean value of the list by line_number (starts
@@ -25,6 +27,7 @@ class SimpleFile(object):
         
         return sum / count
 
+
     def get_max(self, line_number):
         """
         get_max retrieves the maximum value of the list by line_number (starts
@@ -32,12 +35,15 @@ class SimpleFile(object):
         """
         return max(self.numbers[line_number])
 
+
     def get_min(self, line_number):
         """
         get_min retrieves the minimum value of the list by line_number (starts
         with zero)
         """
         return min(self.numbers[line_number])
+
+
 
     def get_sum(self, line_number):
         """
