@@ -38,6 +38,10 @@ class ListTestCase(unittest.TestCase):
         self.assertEqual(2, lists.get_avg(self.l_1))
         self.assertEqual(5, lists.get_avg(self.l_2))
 
+
+
+        
+
 class SimpleFileTestCase(unittest.TestCase):
     """SimplefileTestCase tests the file read implementation"""
 

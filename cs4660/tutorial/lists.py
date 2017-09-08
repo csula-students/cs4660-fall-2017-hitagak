@@ -18,13 +18,12 @@ def get_second_and_third_items(li):
 def get_sum(li):
     """Return the sum of the list items"""
     sum = 0
-    for num in li:
-        sum += num
+    for i in li:
+        sum += i
     return sum
 
 
 def get_avg(li):
     """Returns the average of the list items"""
-    sum = float(get_sum(li))
 
-    return sum / len(li)
+    return get_sum(li) / len(li)
