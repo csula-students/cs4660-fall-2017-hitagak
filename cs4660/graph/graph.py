@@ -145,7 +145,9 @@ class AdjacencyMatrix(object):
 
     # return true if node_1 and node_2 is connected
     def adjacent(self, node_1, node_2):
-        if self.adjacency_matrix[node_1.data][node_2.data] == None or node_1 not in self.nodes or node_2 not in self.nodes:
+        node_1_index =  self.__get_node_index(node_1)
+        node_2_index =  self.__get_node_index(node_2)
+        if self.adjacency_matrix[node_1_index][node_2_index] == None or node_1 not in self.nodes or node_2 not in self.nodes:
             return False
         return True
     
@@ -156,7 +158,8 @@ class AdjacencyMatrix(object):
         if node not in self.nodes:
             return nodelist   
         
-        for n in self.adjacency_matrix[node.data]:
+        node_index =  self.__get_node_index(node) 
+        for n in self.adjacency_matrix[node_index]:
             if n != None:
                 nodelist.append(Node(x))
             x += 1
