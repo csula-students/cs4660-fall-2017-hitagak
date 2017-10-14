@@ -12,6 +12,11 @@ TODO: implement Dijkstra utilizing the path with highest effect number
 
 import json
 import codecs
+try:
+    import Queue as Q
+except ImportError:
+    import queue as Q
+
 
 # http lib import for Python 2 and 3: alternative 4
 try:
@@ -52,8 +57,17 @@ def __json_request(target_url, body):
     response = json.load(reader(urlopen(req, jsondataasbytes)))
     return response
 
+def bfs (initial_node, dest_node):
+
+
+
 if __name__ == "__main__":
     # Your code starts here
     empty_room = get_state('7f3dc077574c013d98b2de8f735058b4')
-    print(empty_room)
-    print(transition_state(empty_room['id'], empty_room['neighbors'][0]['id']))
+    dark_room = get_state('f1f131f647621a4be7c71292e79613f9')
+   # print(empty_room)
+   # print(transition_state(empty_room['id'], empty_room['neighbors'][0]['id']))
+    
+
+
+
