@@ -81,6 +81,7 @@ class AdjacencyList(object):
     def __init__(self):
         # adjacencyList should be a dictonary of node to edges
         self.adjacency_list = {}
+        self.nodes = []
 
     # return True/False if node1 and node 2 are directly connected or not
     def adjacent(self, node_1, node_2):
@@ -134,8 +135,16 @@ class AdjacencyList(object):
         adjacent_edges.remove(edge)
         return True
 
+    # add distance
+    def distance(self, node_1, node_2):
+        if not self.adjacent(node_1, node_2):
+            return None 
+        edges = self.adjacency_list[node_1]
+        for edge in edges:
+            if (edge.to_node == node_2):
+                return edge.weight
     
-    
+
     
 class AdjacencyMatrix(object):
     def __init__(self):
@@ -190,8 +199,7 @@ class AdjacencyMatrix(object):
         self.nodes.remove(node)
 
         return True
-         
-    
+           
 
     # return true if edge is added, otherwise, return false
     def add_edge(self, edge):
@@ -216,6 +224,16 @@ class AdjacencyMatrix(object):
             return False
         self.adjacency_matrix[fromnode_index][tonode_index] = None
         return True
+
+    # add distance
+    def distance(self, node_1, node_2):
+        if not self.adjacent(node_1, node_2):
+            return None 
+        node_1_index = self.__get_node_index(node_1)
+        node_2_index = self.__get_node_index(node_2)
+        if self.adjacency_matrix[node_1_index][node_2_index] is None:
+            return None 
+        return self.adjacency_matrix[node_1_index][node_2_index]
     
     def __get_node_index(self, node):
         """helper method to find node index"""
@@ -278,4 +296,10 @@ class ObjectOriented(object):
         self.edges.remove(edge)
         return True 
 
-
+    # add distance
+    def distance(self, node_1, node_2):
+        if not self.adjacent(node_1, node_2):
+            return None 
+        for edge in self.edges:
+            if edge.from_node == node_1 and edge.to_node == node_2:
+                return edge.weight
