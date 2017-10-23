@@ -305,5 +305,4 @@ class ObjectOriented(object):
                 return edge.weight
 
 
-
                 
